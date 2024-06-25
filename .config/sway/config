@@ -64,7 +64,10 @@ output 'Chimei Innolux Corporation 0x1540 Unknown' resolution 2560x1440 position
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
+default_border pixel 2
+default_floating_border none
+titlebar_padding 1
+titlebar_border_thickness 0
 ### Key bindings
 #
 # Basics:
@@ -209,6 +212,13 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+ # or input <identifier>
+input "type:keyboard" {
+    xkb_layout gb
+    xkb_variant ,nodeadkeys
+    xkb_options caps:swapescape
+}
 
 #
 # Status Bar:
