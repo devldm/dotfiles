@@ -77,3 +77,12 @@ eval "`fnm env`"
 # Shell integrations
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+# fnm
+FNM_PATH="/home/liam/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/liam/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+# nvim app image
+export PATH="$PATH:/opt/nvim/"

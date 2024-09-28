@@ -18,7 +18,7 @@ curl -sS https://starship.rs/install.sh | sh
 echo "starship installed" >>$log_file
 
 # Install exa
-sudo apt-get -y install exa
+sudo apt -y install exa
 echo "Exa installed" >>$log_file
 
 # Insall zoxide
@@ -45,6 +45,12 @@ curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/lates
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
 echo "Lazygit installed" >>$log_file
+
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x nvim.appimage
+
+mkdir -p /opt/nvim
+mv nvim.appimage /opt/nvim/nvim
 
 echo -e "\n====== Summary ======\n"
 cat $log_file
