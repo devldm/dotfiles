@@ -34,6 +34,10 @@ echo "tmux installed" >>$log_file
 git clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 echo "tpm installed" >>$log_file
 
+# Install ripgrep
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
+sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
+
 # Install JetBrainsMono nerdfont
 font_url='https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip'
 font_name=${font_url##*/}
