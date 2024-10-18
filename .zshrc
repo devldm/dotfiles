@@ -70,6 +70,10 @@ alias cd="z"
 alias sdi="sudo dnf install"
 alias sduu="sudo dnf update && sudo dnf upgrade"
 
+if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+  tmux attach || exec tmux new-session && exit;
+fi
+
 # fnm
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"

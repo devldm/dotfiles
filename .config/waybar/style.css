@@ -15,7 +15,7 @@ window#waybar {
 
 .modules-right {
   background-color: #323232;
-  padding: 0px 5px 0px 0px;
+  padding: 0px 10px;
 }
 
 #custom-scratch {
@@ -73,11 +73,11 @@ window#waybar.empty {
   padding: 0px 20px 0px 20px;
 }
 #backlight {
-  padding: 0 10px 0 10px;
+  padding: 0 5px 0 20px;
 }
 
 #clock {
-  margin: 0px 15px 0px 15px;
+  margin: 0px 10px 0px 10px;
 }
 
 #tray {
