@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock -f -e -i ~/Pictures/lockScreen.png -s stretch",
+    "action" : "swaylock -f -e -i ~/Pictures/wallpaper/blurred-bg.png -s stretch",
     "text" : "Lock",
     "keybind" : "l"
 }
