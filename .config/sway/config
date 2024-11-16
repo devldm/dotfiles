@@ -32,6 +32,7 @@ exec swayidle -w \
          before-sleep 'swaylock -f -e -i ~/Pictures/wallpaper/blurred-bg.png -s fill'
 
 bindsym $mod+Shift+x exec wlogout -p layer-shell
+bindsym $mod+Shift+n exec swaync-client -t -sw
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
