@@ -4,22 +4,22 @@
 }
 
 window#waybar {
-  background-color: #225877;
+  background-color: #121212;
   color: #ffffff;
 }
 
 .modules-left {
-  background-color: #323232;
+  background-color: #121212;
   padding: 0px 0px 0px 0px;
 }
 
 .modules-right {
-  background-color: #323232;
+  background-color: #121212;
   padding: 0px 10px;
 }
 
 #custom-scratch {
-  background-color: #323232;
+  background-color: #121212;
   color: #b8b8b8;
   padding: 0px 9px 0px 9px;
 }
@@ -58,7 +58,7 @@ window#waybar.empty #window {
 }
 
 window#waybar.empty {
-  background-color: #323232;
+  background-color: #121212;
 }
 
 #network,

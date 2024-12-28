@@ -13,6 +13,7 @@ set $term kitty
 set $menu tofi-drun | xargs swaymsg exec --
 set $browser flatpak run org.mozilla.firefox
 set $fileManager nautilus
+exec kime
 
 ### Output configuration
 #
@@ -126,6 +127,8 @@ titlebar_border_thickness 0
 #
 # Workspaces:
 #
+    bindsym $mod+Ctrl+$left workspace prev 
+    bindsym $mod+Ctrl+$right workspace next 
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
