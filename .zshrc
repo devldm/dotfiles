@@ -4,6 +4,13 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export PATH=$PATH:$STARSHIP_CONFIG
 export PATH="$HOME/.local/bin":$PATH
 
+# Set up ASDF
+. "$HOME/.asdf/asdf.sh"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
