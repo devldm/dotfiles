@@ -155,7 +155,7 @@
 	num-results = 0
 
 	# Spacing between results in pixels. Can be negative.
-	result-spacing = 15
+	result-spacing = 30
 
 	# List results horizontally.
 	horizontal = true
