@@ -97,3 +97,4 @@ if [ -d "$FNM_PATH" ]; then
 fi
 # nvim app image
 export PATH="$PATH:/opt/nvim/"
+export PATH=$PATH:$(go env GOPATH)/bin
