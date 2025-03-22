@@ -90,11 +90,12 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 # fnm
-FNM_PATH="/home/liam/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/liam/.local/share/fnm:$PATH"
+  export PATH="$HOME/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
 # nvim app image
 export PATH="$PATH:/opt/nvim/"
 export PATH=$PATH:$(go env GOPATH)/bin
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share
