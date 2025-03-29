@@ -11,14 +11,14 @@ set $right l
 set $term kitty
 # Your preferred application launcher
 set $menu tofi-drun | xargs swaymsg exec --
-set $browser flatpak run org.mozilla.firefox
+set $browser flatpak run app.zen_browser.zen
 set $fileManager nautilus
 exec kime
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/wallpaper/City-Rain.png fill
+output * bg ~/dotfiles/wallpapers/city-rain.png fill
 output 'Chimei Innolux Corporation 0x1540 Unknown' resolution 2560x1440 position 0,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
@@ -28,9 +28,9 @@ output 'Chimei Innolux Corporation 0x1540 Unknown' resolution 2560x1440 position
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -e -i ~/Pictures/wallpaper/blurred-bg.png -s fill' \
+         timeout 300 'swaylock -f -e -i ~/dotfiles/wallpapers/blur-city-rain.png -s fill' \
          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -e -i ~/Pictures/wallpaper/blurred-bg.png -s fill'
+         before-sleep 'swaylock -f -e -i ~/dotfiles/wallpapers/blur-city-rain.png -s fill'
 
 bindsym $mod+Shift+x exec wlogout -p layer-shell
 bindsym $mod+Shift+n exec swaync-client -t -sw
@@ -99,10 +99,10 @@ titlebar_border_thickness 0
     bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 
-    bindsym Print exec "wl-copy < $(grimshot save area)"
+    bindsym $mod+o exec "wl-copy < $(grimshot save area)"
 
 # Moving around:
-#
+
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
@@ -151,8 +151,7 @@ titlebar_border_thickness 0
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+
 #
 # Layout stuff:
 #

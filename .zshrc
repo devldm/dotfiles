@@ -99,3 +99,5 @@ fi
 export PATH="$PATH:/opt/nvim/"
 export PATH=$PATH:$(go env GOPATH)/bin
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share
+
+export SWAYSOCK=$( lsof /run/user/1000/sway-ipc.* 2>/dev/null | awk '{print $9}' | tail -n +2 | sort | uniq )
