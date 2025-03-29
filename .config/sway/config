@@ -28,8 +28,8 @@ output 'Chimei Innolux Corporation 0x1540 Unknown' resolution 2560x1440 position
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -e -i ~/dotfiles/wallpapers/blur-city-rain.png -s fill' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 600 'swaylock -f -e -i ~/dotfiles/wallpapers/blur-city-rain.png -s fill' \
+         timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -e -i ~/dotfiles/wallpapers/blur-city-rain.png -s fill'
 
 bindsym $mod+Shift+x exec wlogout -p layer-shell
