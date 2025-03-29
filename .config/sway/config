@@ -128,7 +128,9 @@ titlebar_border_thickness 0
 # Workspaces:
 #
     bindsym $mod+Ctrl+$left workspace prev 
-    bindsym $mod+Ctrl+$right workspace next 
+    bindsym $mod+Ctrl+$right workspace next    
+    bindsym $mod+Ctrl+Left workspace prev 
+    bindsym $mod+Ctrl+Right workspace next
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
