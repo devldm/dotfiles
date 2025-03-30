@@ -8,17 +8,18 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term ghostty
 # Your preferred application launcher
-set $menu tofi-drun | xargs swaymsg exec --
+set $menu rofi -show drun | xargs swaymsg exec --
 set $browser flatpak run app.zen_browser.zen
-set $fileManager nautilus
+set $fileManager thunar
 exec kime
+exec syncthing serve --no-browser
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/dotfiles/wallpapers/city-rain.png fill
+output * bg ~/Pictures/wallpapers/vienna-snow.jpg stretch
 output 'Chimei Innolux Corporation 0x1540 Unknown' resolution 2560x1440 position 0,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
