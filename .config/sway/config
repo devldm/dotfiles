@@ -9,11 +9,11 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term ghostty
-# Your preferred application launcher
 set $menu rofi -show drun | xargs swaymsg exec --
 set $browser flatpak run app.zen_browser.zen
 set $fileManager thunar
-exec kime
+
+exec fcitx5
 exec syncthing serve --no-browser
 
 ### Output configuration
