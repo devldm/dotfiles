@@ -6,10 +6,6 @@ export PATH="$HOME/.local/bin":$PATH
 export ANDROID_HOME="$HOME/Android/Sdk/"
 export PATH="$PATH:$ANDROID_HOME"
 
-# Set up ASDF
-. "$HOME/.asdf/asdf.sh"
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
@@ -101,9 +97,6 @@ fi
 export PATH="$PATH:/opt/nvim/"
 export PATH=$PATH:$(go env GOPATH)/bin
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share
-
-
-export SWAYSOCK=$( lsof /run/user/1000/sway-ipc.* 2>/dev/null | awk '{print $9}' | tail -n +2 | sort | uniq )
 
 # add Flatpak apps to PATH
 if [ -d "/var/lib/flatpak/exports/bin" ]; then
