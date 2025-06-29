@@ -1,0 +1,75 @@
+configuration {
+  font: "JetBrainsMono Nerd Font 20";
+  drun {
+    display-name: "";
+  }
+  run {
+    display-name: "";
+  }
+  window {
+    display-name: "";
+  }
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+window {
+  transparency: "real";
+  width: 700px;
+  background-color: #121212;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  background-color: #121212;
+}
+
+inputbar {
+  background-color: #1e1e1e;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: #121212;
+  text-color: #a9b1d6;
+  padding: 12px 3px;
+}
+
+prompt {
+  background-color: #121212;
+  text-color: #888888;
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-icon, element-text];
+  padding: 0px;
+  spacing: 0px;
+}
+
+element-icon {
+  padding: 10px 10px;
+  size: 30px;
+  background-color: #121212;
+}
+
+element-text {
+  padding: 10px 10px;
+  background-color: #121212;
+  color: #888888;
+}
+
+element-text selected {
+  background-color: #87ceeb;
+  text-color: #121212;
+}
+
+element-icon selected {
+   background-color: #87ceeb;
+}
