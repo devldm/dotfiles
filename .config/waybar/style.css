@@ -1,94 +1,185 @@
+@define-color background #121212;
+@define-color color0 #121212;
+@define-color color7 #ffffff;
+@define-color color9 #87ceeb;
+@define-color foreground #ffffff;
+
 * {
-  font-family: "UbuntuMono Nerd Font";
-  font-size: 16px;
+  font-size: 15px;
+  font-family: "JetBrains Mono Nerd Font";
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 window#waybar {
-  background-color: #121212;
-  color: #ffffff;
+  background: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 7px;
+  margin: 10px 0 5px 0;
+  border-radius: 10px;
+  background: rgba(18, 18, 18, 0.6);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 }
 
 .modules-left {
-  background-color: #121212;
-  padding: 0px 0px 0px 0px;
+  margin-left: 10px;
 }
 
 .modules-right {
-  background-color: #121212;
-  padding: 0px 10px;
+  margin-right: 10px;
 }
 
-#custom-scratch {
-  background-color: #121212;
-  color: #b8b8b8;
-  padding: 0px 9px 0px 9px;
+tooltip {
+  background: @background;
+  color: @color7;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature {
+  padding: 0px 5px;
+  color: @color7;
+  transition: all 0.3s ease;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover {
+  color: @color9;
+}
+
+#custom-notification {
+  padding: 0px 5px;
+  color: @color7;
+  transition: all 0.3s ease;
 }
 
 #workspaces {
+  padding: 0px 5px;
 }
 
 #workspaces button {
-  padding: 0px 11px 0px 11px;
-  min-width: 1px;
-  color: #888888;
+  padding: 0px 2px;
+  margin: 0;
+  color: rgba(135, 206, 235, 0.4);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  transition: all 0.2s ease;
 }
 
-#workspaces button.focused {
-  padding: 0px 11px 0px 11px;
-  background-color: #285577;
-  color: #ffffff;
+#workspaces button:hover {
+  color: rgba(135, 206, 235, 0.6);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
 }
 
-#mode {
-  background-color: #900000;
-  color: #ffffff;
-  padding: 0px 5px 0px 5px;
-  border: 1px solid #2f343a;
+#workspaces button.active {
+  color: @color9;
+  background: transparent;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
-#window {
-  color: #ffffff;
-  background-color: #285577;
-  padding: 0px 10px 0px 10px;
+#workspaces button.empty {
+  color: rgba(255, 255, 255, 0.2);
+  background: transparent;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.2);
 }
 
-window#waybar.empty #window {
-  background-color: transparent;
-  color: transparent;
+#workspaces button.empty:hover {
+  color: rgba(255, 255, 255, 0.3);
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
 }
 
-window#waybar.empty {
-  background-color: #121212;
+#workspaces button.empty.active {
+  color: @color9;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
-#network,
-#temperature,
-#pulseudio,
-#battery,
-#custom-music,
-#custom-power,
-#custom-lock #cpu,
-#temperature,
-#memory {
-  padding: 0px 20px 0px 20px;
-}
 #backlight {
-  padding: 0 5px 0 20px;
+  padding: 0px 10px;
+  color: @color7;
+  transition: all 0.3s ease;
 }
 
-#clock {
-  margin: 0px 10px 0px 10px;
+#pulseaudio {
+  padding: 0px 5px;
+  color: @color7;
+  transition: all 0.3s ease;
+}
+
+#battery.charging {
+  color: #26a65b;
+}
+
+#battery.warning:not(.charging) {
+  color: #ffbe61;
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+  animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0.5;
+  }
+}
+
+#custom-expand {
+  padding: 0px 5px;
+  color: @color7;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+#custom-expand:hover {
+  color: rgba(255, 255, 255, 0.3);
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+}
+
+#custom-colorpicker {
+  padding: 0px 5px;
+  color: @color7;
+}
+
+#custom-endpoint {
+  color: @color7;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
 }
 
 #tray {
-  padding: 0px 8px 0px 5px;
-  margin: 0px 5px 0px 5px;
+  padding: 0px 5px;
 }
 
-#battery.critical {
-  color: #ff5555;
+#tray menu {
+  background: @background;
+  color: @color7;
+  border-radius: 5px;
 }
 
-#network.disconnected {
-  color: #ff5555;
+#tray menu menuitem {
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+#tray menu separator {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 2px 0;
 }
