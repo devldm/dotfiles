@@ -1,2 +1,4 @@
 confirm-close-surface = false
-theme = carbonfox
+theme = Carbonfox
+font-size = 20
+cursor-style = block

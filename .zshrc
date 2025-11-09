@@ -75,7 +75,7 @@ alias cd="z"
 alias sdi="sudo dnf install"
 alias sduu="sudo dnf update && sudo dnf upgrade"
 
-if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+if [ -z "$TMUX" ] && [ "$TERM" = "xterm-ghostty" ]; then
   tmux attach || exec tmux new-session && exit;
 fi
 
@@ -108,7 +108,5 @@ if [ -d "$HOME/.local/share/flatpak/exports/bin" ]; then
 fi
 
 export PATH
-
-
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
