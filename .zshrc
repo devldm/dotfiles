@@ -98,6 +98,8 @@ export PATH="$PATH:/opt/nvim/"
 export PATH=$PATH:$(go env GOPATH)/bin
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # add Flatpak apps to PATH
 if [ -d "/var/lib/flatpak/exports/bin" ]; then
     PATH="/var/lib/flatpak/exports/bin:$PATH"

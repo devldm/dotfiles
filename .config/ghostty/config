@@ -12,5 +12,5 @@ window-padding-y = 14
 confirm-close-surface=false
 resize-overlay = never
 gtk-toolbar-style = flat
-
+window-decoration = none
 shell-integration-features = no-cursor,ssh-env
