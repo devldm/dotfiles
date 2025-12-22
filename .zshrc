@@ -64,9 +64,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Alias
 alias zshconfig="nvim ~/.zshrc"
 alias lg="lazygit"
-alias ls="exa"
-alias ll="exa -alh"
-alias tree="exa --tree"
+alias ls="eza"
+alias ll="eza -alh"
+alias tree="eza --tree"
 alias cat="bat"
 alias v="nvim"
 alias nvc="nordvpn connect"
@@ -112,3 +112,4 @@ fi
 export PATH
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(direnv hook zsh)"
