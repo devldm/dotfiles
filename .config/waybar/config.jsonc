@@ -4,7 +4,8 @@
   "reload_style_on_change": true,
   "modules-left": ["clock", "tray"],
   //"modules-center": ["hyprland/workspaces"],
-  "modules-center": ["niri/workspaces"],
+  // "modules-center": ["niri/workspaces"],
+  "modules-center": ["sway/workspaces"],
   "modules-right": ["group/expand", "pulseaudio", "backlight", "battery"],
 
   "hyprland/workspaces": {
@@ -19,7 +20,7 @@
     },
   },
   "clock": {
-    "format": "{:%I:%M:%S %p} ",
+    "format": "{:%I:%M} ",
     "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
