@@ -74,6 +74,7 @@ alias nvd="nordvpn disconnect"
 alias cd="z"
 alias sdi="sudo dnf install"
 alias sduu="sudo dnf update && sudo dnf upgrade"
+alias k="kubectl"
 
 if [ -z "$TMUX" ] && [ "$TERM" = "xterm-ghostty" ]; then
   tmux attach || exec tmux new-session && exit;
@@ -97,7 +98,7 @@ fi
 export PATH="$PATH:/opt/nvim/"
 export PATH=$PATH:$(go env GOPATH)/bin
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share
-
+export PATH=$PATH:$HOME/.arkade/bin/
 export PATH="$HOME/.local/bin:$PATH"
 
 # add Flatpak apps to PATH
@@ -113,3 +114,11 @@ export PATH
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(direnv hook zsh)"
+. "$HOME/.deno/env"
+
+# opencode
+export PATH=$HOME/.opencode/bin:$PATH
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="$HOME/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
