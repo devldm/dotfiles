@@ -84,7 +84,7 @@ direnv hook fish | source
 # ---------------------------------------------------------------------------
 
 if status is-interactive
-    if test -z "$TMUX" && test "$TERM" = xterm-ghostty
+    if test -z "$TMUX" && test "$TERM" = foot
         tmux attach; or exec tmux new-session
     end
 end
