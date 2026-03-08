@@ -19,8 +19,6 @@ exec nm-applet --indicator
 exec blueman-applet
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/dotfiles/wallpapers/landscape-near-roquevaire-in-provence.jpg stretch
 output 'Chimei Innolux Corporation 0x1540 Unknown' resolution 2560x1440 position 0,0 scale 1.25 
 #
@@ -60,8 +58,6 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-default_border pixel 3
-default_floating_border none
 titlebar_padding 1
 titlebar_border_thickness 0
 
@@ -216,25 +212,44 @@ input "type:keyboard" {
     xkb_options caps:swapescape
 }
 
-#
+gaps inner 2px
+gaps outer 2px
+
+default_border pixel 2px
+default_floating_border pixel 2px
+
+# cursor
+# seat seat0 xcursor_theme Bibata-Original-Ice 14
+
 # Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position top
-#
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# } 
 bar {
-        swaybar_command waybar
-    }
+  swaybar_command swaybar
+  status_command ~/.config/sway/status.sh
+  font JetBrainsMono Nerd Font Bold Regular 12
+  position bottom
+  workspace_min_width 36
+  tray_padding 4
+  colors {
+    background #141514
+    statusline #87ceeb
+    separator #87ceeb
+    focused_background #1e1f1e
+    focused_statusline #87ceeb
+    focused_separator #87ceeb
+    focused_workspace #87ceeb #87ceeb #141514
+    active_workspace #7ec97e #7ec97e #141514
+    inactive_workspace #3b403c #3b403c #f4decd
+    urgent_workspace #f16e65 #f16e65 #141514
+    binding_mode #71b4d6 #71b4d6 #141514
+  }
+}
+
+# -Colors-
+# name                    border  bg      text    ind     child_border
+client.focused            #87ceeb #141514 #f4decd #87ceeb #87ceeb
+client.focused_inactive   #1e1f1e #141514 #f4decd #1e1f1e #1e1f1e
+client.unfocused          #1e1f1e #141514 #f4decd #1e1f1e #1e1f1e
+client.urgent             #f16e65 #141514 #f4decd #f16e65 #f16e65
+client.placeholder        #1e1f1e #141514 #f4decd #1e1f1e #1e1f1e
 
 include /etc/sway/config.d/*
