@@ -79,12 +79,15 @@ fnm env | source
 # direnv
 direnv hook fish | source
 
+# mise
+mise activate fish | source
+
 # ---------------------------------------------------------------------------
 # Tmux auto-attach (when opening a terminal outside tmux)
 # ---------------------------------------------------------------------------
 
 if status is-interactive
-    if test -z "$TMUX" && test "$TERM" = foot
+    if test -z "$TMUX" && string match -q -r 'foot|xterm-ghostty' $TERM
         tmux attach; or exec tmux new-session
     end
 end
