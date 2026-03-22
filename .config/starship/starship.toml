@@ -6,6 +6,8 @@ $git_branch\
 $git_state\
 $git_status\
 $cmd_duration\
+$fill\
+$container\
 $line_break\
 $python\
 $character"""
@@ -40,6 +42,10 @@ style = "bright-black"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
+
+[container]
+format = "[$name]($style) "
+style = "purple"
 
 [python]
 format = "[$virtualenv]($style) "
