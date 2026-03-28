@@ -1,18 +1,6 @@
 #!/bin/bash
 
 log_file=~/install_progress_log.txt
-sudo apt-get -y install zsh
-
-if type -p zsh >/dev/null; then
-  echo "zsh Installed" >>$log_file
-else
-  echo "zsh failed to install" >>$log_file
-fi
-
-# Install fast node manager
-cd ~/
-curl -fsSL https://fnm.vercel.app/install | bash
-echo "fnm installed" >>$log_file
 
 # Install Starship
 curl -sS https://starship.rs/install.sh | sh
@@ -29,10 +17,6 @@ echo "zoxide installed" >>$log_file
 # Install TMUX
 sudo apt-get -y install tmux
 echo "tmux installed" >>$log_file
-
-# Install TPM
-git clone git@github.com:tmux-plugins/tpm.git ~/.tmux/plugins/tpm
-echo "tpm installed" >>$log_file
 
 # Install ripgrep
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep_14.1.0-1_amd64.deb
