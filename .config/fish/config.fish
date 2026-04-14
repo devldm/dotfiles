@@ -27,6 +27,8 @@ fish_add_path $HOME/.opencode/bin
 # Rancher Desktop
 fish_add_path $HOME/.rd/bin
 
+fish_add_path $HOME/.config/emacs/bin
+
 # Flatpak
 fish_add_path /var/lib/flatpak/exports/bin
 fish_add_path $HOME/.local/share/flatpak/exports/bin
@@ -52,6 +54,7 @@ alias ll="eza -alh --icons=always"
 alias tree="eza --tree --icons=always"
 alias cat="bat"
 alias v="nvim"
+alias e="emacs -nw"
 alias lg="lazygit"
 alias ld="lazydocker"
 alias k="kubectl"
