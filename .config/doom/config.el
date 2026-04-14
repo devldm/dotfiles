@@ -67,6 +67,19 @@
 ;; Archive location
 (setq org-archive-location "~/org/archive.org::* From %s")
 
+;; Format and save on Ctrl-S, escape insert mode first if needed
+(map! :n "C-s" #'save-buffer
+      :i "C-s" (lambda ()
+                 (interactive)
+                 (evil-normal-state)
+                 (save-buffer)))
+
+;; Format on save
+(add-hook 'before-save-hook #'format-all-buffer)
+
+;; Speed of which-key popup
+(setq which-key-idle-delay 0.1)
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
 ;; settings. E.g.
