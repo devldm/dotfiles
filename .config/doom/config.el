@@ -46,21 +46,24 @@
 
 ;; All four files feed the agenda
 (setq org-agenda-files '("~/org/inbox.org"
-                         "~/org/tasks.org"
+                         "~/org/calendar.org"
                          "~/org/journal.org"))
-
 ;; Task states — simple but covers GTD
 (setq org-todo-keywords
       '((sequence "TODO(t)" | "DONE(d)")))
 ;; Capture templates — press SPC X to capture from anywhere
-(setq org-capture-templates
-      '(("i" "Inbox" entry (file "~/org/inbox.org")
-         "* TODO %?\n%U\n")
-        ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
-         "* %?\n%U\n")
-        ("n" "Note" entry (file "~/org/notes.org")
-         "* %? :note:\n%U\n")))
-
+(after! org
+  (setq org-capture-templates
+        '(("i" "Inbox" entry (file "~/org/inbox.org")
+           "* TODO %? %U\n")
+          ("t" "Todo" entry (file "~/org/calendar.org")
+           "* TODO %? %^t\n")
+          ("j" "Journal" entry (file+olp+datetree "~/org/journal.org")
+           "* %? %U\n")
+          ("n" "Note" entry (file "~/org/notes.org")
+           "* %? :note: %U\n")
+          ("e" "Event" entry (file "~/org/calendar.org")
+           "* %^{Title}\n  %^{Date}t%^{Repeater||| +1d| +1w| +1m| +1y}\n  :PROPERTIES:\n  :LOCATION: %^{Location|}\n  :NOTE:     %^{Note|}\n  :END:\n"))))
 ;; Refile targets — move items from inbox to the right file
 (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
 
