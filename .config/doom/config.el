@@ -34,7 +34,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-tokyo-night)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -43,6 +43,8 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+
+(set-frame-parameter nil 'undecorated t)
 
 ;; All four files feed the agenda
 (setq org-agenda-files '("~/org/inbox.org"
@@ -77,11 +79,11 @@
                  (evil-normal-state)
                  (save-buffer)))
 
-;; Format on save
-(add-hook 'before-save-hook #'format-all-buffer)
-
 ;; Speed of which-key popup
 (setq which-key-idle-delay 0.1)
+
+(after! treemacs
+  (setq treemacs-position 'right))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `with-eval-after-load' block, otherwise Doom's defaults may override your
