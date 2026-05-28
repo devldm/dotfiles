@@ -14,3 +14,4 @@ resize-overlay = never
 gtk-toolbar-style = flat
 window-decoration = none
 shell-integration-features = no-cursor,ssh-env
+mouse-scroll-multiplier = 0.5
