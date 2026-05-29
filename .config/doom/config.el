@@ -44,6 +44,16 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+;; Disable exit confirmation
+(setq confirm-kill-emacs nil)
+
+;; Breathing room
+(set-fringe-mode 10)
+
+;; Bigger text
+(set-face-attribute 'default nil :height 150)
+
+
 (set-frame-parameter nil 'undecorated t)
 
 ;; All four files feed the agenda
