@@ -9,9 +9,6 @@ fish_add_path $HOME/.local/bin
 fish_add_path /usr/local/go/bin
 fish_add_path $HOME/go/bin
 
-# Node (fnm)
-fish_add_path $HOME/.local/share/fnm
-
 # Deno
 fish_add_path $HOME/.deno/bin
 
@@ -23,9 +20,6 @@ fish_add_path $HOME/.arkade/bin
 
 # Opencode
 fish_add_path $HOME/.opencode/bin
-
-# Rancher Desktop
-fish_add_path $HOME/.rd/bin
 
 fish_add_path $HOME/.config/emacs/bin
 
@@ -42,8 +36,6 @@ eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 set -gx ANDROID_HOME $HOME/Android/Sdk
 fish_add_path $ANDROID_HOME
-set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
-set -gx XDG_DATA_DIRS $XDG_DATA_DIRS $HOME/.local/share/flatpak/exports/share
 
 # ---------------------------------------------------------------------------
 # Aliases
@@ -75,12 +67,6 @@ starship init fish | source
 
 # Zoxide (smart cd)
 zoxide init fish | source
-
-# fnm (Node version manager)
-fnm env | source
-
-# direnv
-direnv hook fish | source
 
 # mise
 mise activate fish | source
