@@ -15,9 +15,6 @@ fish_add_path $HOME/.deno/bin
 # Nvim appimage
 fish_add_path /opt/nvim
 
-# Arkade
-fish_add_path $HOME/.arkade/bin
-
 # Opencode
 fish_add_path $HOME/.opencode/bin
 
@@ -27,21 +24,11 @@ fish_add_path $HOME/.config/emacs/bin
 fish_add_path /var/lib/flatpak/exports/bin
 fish_add_path $HOME/.local/share/flatpak/exports/bin
 
-# Homebrew
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-# ---------------------------------------------------------------------------
-# Environment
-# ---------------------------------------------------------------------------
-
-set -gx ANDROID_HOME $HOME/Android/Sdk
-fish_add_path $ANDROID_HOME
-
 # ---------------------------------------------------------------------------
 # Aliases
 # ---------------------------------------------------------------------------
 
-alias ls="eza --icons=always"
+alias ls="eza --color=auto --icons=auto --group-directories-first"
 alias ll="eza -alh --icons=always"
 alias tree="eza --tree --icons=always"
 alias cat="bat"
@@ -61,15 +48,11 @@ alias sduu="sudo dnf update && sudo dnf upgrade"
 # ---------------------------------------------------------------------------
 # Integrations
 # ---------------------------------------------------------------------------
-
 # Starship prompt
 starship init fish | source
 
 # Zoxide (smart cd)
 zoxide init fish | source
-
-# mise
-mise activate fish | source
 
 # ---------------------------------------------------------------------------
 # Tmux auto-attach (when opening a terminal outside tmux)
