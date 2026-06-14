@@ -38,9 +38,6 @@ alias lg="lazygit"
 alias ld="lazydocker"
 alias k="kubectl"
 
-# Navigation
-alias cd="z"
-
 # Package management
 alias sdi="sudo dnf install"
 alias sduu="sudo dnf update && sudo dnf upgrade"
