@@ -24,6 +24,9 @@ fish_add_path $HOME/.config/emacs/bin
 fish_add_path /var/lib/flatpak/exports/bin
 fish_add_path $HOME/.local/share/flatpak/exports/bin
 
+# Homebrew
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 # ---------------------------------------------------------------------------
 # Aliases
 # ---------------------------------------------------------------------------
