@@ -1,0 +1,8 @@
+profile docked {
+  output DP-9 enable mode 3840x2160@100Hz scale 1.75 position 0,0
+  output eDP-1 disable
+}
+
+profile mobile {
+  output eDP-1 enable mode 2560x1440@165Hz scale 1.4 transform normal position 0,0
+}
