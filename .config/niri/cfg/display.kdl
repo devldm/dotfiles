@@ -1,0 +1,19 @@
+output "eDP-1" {
+    mode "2560x1440@165.003"
+    scale 1.4
+    transform "normal"
+    position x=0 y=0
+}
+
+output "DP-9" {
+  mode "3840x2160@100"
+  scale 1.75
+}
+
+output "Samsung Electric Company Smart M50D H1AK500000" {
+    mode "1920x1080@60.000"
+    scale 1
+    position x=0 y=0
+}
+
+
