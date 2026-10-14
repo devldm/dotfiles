@@ -1,5 +1,4 @@
 ### Variables
-#
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -7,38 +6,22 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term ghostty
-set $menu rofi -show drun | xargs swaymsg exec --
-set $browser com.vivaldi.Vivaldi
+set $term foot
+set $browser firefox
 set $fileManager nautilus
+set $ipc noctalia msg
 
 exec fcitx5
 exec syncthing serve --no-browser
 exec nm-applet --indicator
 exec blueman-applet
 exec /usr/libexec/lxqt-policykit-agent
+exec noctalia
+exec kanshi
 
 ### Output configuration
-output * bg ~/dotfiles/wallpapers/landscape-near-roquevaire-in-provence.jpg stretch
-output 'Chimei Innolux Corporation 0x1540 Unknown' resolution 2560x1440 position 0,0 scale 1.25 
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-exec swayidle -w \
-         timeout 600 'swaylock -f -e -i ~/dotfiles/wallpapers/blur-city-rain.png -s fill' \
-         timeout 900 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -e -i ~/dotfiles/wallpapers/blur-city-rain.png -s fill'
-
-bindsym $mod+Shift+x exec wlogout -p layer-shell
-bindsym $mod+Shift+n exec swaync-client -t -sw
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+output 'eDP-1' resolution 2560x1440@165Hz position 0,0 scale 1.25 
+output 'DP-9' resolution 3840x2160@100Hz position 0,0 scale 1.5
 
 ### Input configuration
 
@@ -64,24 +47,29 @@ titlebar_border_thickness 0
 ### Key bindings
     bindsym $mod+Return exec $term
     bindsym $mod+q kill
-    bindsym $mod+d exec $menu
     bindsym $mod+f exec $fileManager
     bindsym $mod+b exec $browser
+    bindsym $mod+b exec emacs
+
+    bindsym $mod+Shift+x exec $ipc panel-toggle session
+    bindsym $mod+Alt+l exec $ipc session lock
+    bindsym $mod+Alt+s exec $ipc session shutdown
+
+    bindsym $mod+space exec $ipc panel-toggle launcher
+    bindsym $mod+s exec $ipc panel-toggle control-center
+    bindsym $mod+comma exec $ipc settings-toggle
 
     floating_modifier $mod normal
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-
-    bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-    bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-    bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-
-    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-    bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+# Media keys
+    bindsym --locked XF86AudioRaiseVolume exec $ipc volume-up
+    bindsym --locked XF86AudioLowerVolume exec $ipc volume-down
+    bindsym --locked XF86AudioMute exec $ipc volume-mute
+    bindsym --locked XF86MonBrightnessUp exec $ipc brightness-up
+    bindsym --locked XF86MonBrightnessDown exec $ipc brightness-down
 
     bindsym $mod+o exec "wl-copy < $(grimshot save area)"
 
@@ -211,29 +199,6 @@ gaps outer 2px
 
 default_border pixel 2px
 default_floating_border pixel 2px
-
-# Status Bar:
-bar {
-  swaybar_command swaybar
-  status_command ~/.config/sway/status.sh
-  font JetBrainsMono Nerd Font Bold Regular 12
-  position bottom
-  workspace_min_width 36
-  tray_padding 4
-  colors {
-    background #141514
-    statusline #87ceeb
-    separator #87ceeb
-    focused_background #1e1f1e
-    focused_statusline #87ceeb
-    focused_separator #87ceeb
-    focused_workspace #87ceeb #87ceeb #141514
-    active_workspace #7ec97e #7ec97e #141514
-    inactive_workspace #3b403c #3b403c #f4decd
-    urgent_workspace #f16e65 #f16e65 #141514
-    binding_mode #71b4d6 #71b4d6 #141514
-  }
-}
 
 # -Colors-
 # name                    border  bg      text    ind     child_border
