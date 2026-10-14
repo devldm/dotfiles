@@ -13,6 +13,11 @@ return {
           mason = false,
           autostart = false,
         },
+        kotlin_language_server = {
+          cmd_env = {
+            JAVA_HOME = vim.fn.trim(vim.fn.system("mise where java@21")),
+          },
+        },
       },
     },
   },
